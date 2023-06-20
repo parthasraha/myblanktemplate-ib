@@ -1,0 +1,19 @@
+image: python:3.8-slim
+
+pages:
+  stage: deploy
+  script:
+    - cd ./sitebuild/mastersite/
+    # Install all of the python packages for mkdocs
+    - pip install -r ./requirements.txt
+    # Build the site using mkdocs
+    # --strict aborts the build on any warnings
+    # --verbose enables verbose output so that it's easier to see what mkdocs is doing
+    # neither --strict nor --verbose are necessary if you choose not to use them
+    - mkdocs build --strict --verbose
+    - echo $PWD
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
