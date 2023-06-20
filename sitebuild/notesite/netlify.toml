@@ -1,0 +1,27 @@
+# This overrides any settings done in UI for same fields
+
+# Build context is Global default for all contexts
+[build]
+  # Directory to change to before starting a build where package.json etc.
+  # Path is in reference to repo root.
+  base = "sitebuild/notesite/"
+
+  # publishes build artefacts to the directory relative to base dir
+  publish = "site/"
+
+  # Install all of the python packages for mkdocs
+  # Build the site using mkdocs
+  # --strict aborts the build on any warnings
+  # --verbose enables verbose output so that it's easier to see what mkdocs is doing but both strict, verbose not necessary
+  command = "pip install -r ./requirements.txt && mkdocs build --strict --verbose"
+
+  # Check notesite and also content/notebook directory for changes 
+  # If not specified, default it will check only base dir notesite changes
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF . ../../content/notebook/"
+
+  # Redirect to notebook folder
+  [[redirects]]
+    from = "/"
+    to = "/notebook"
+    status = 301
+    force = true

@@ -1,0 +1,15 @@
+- name: Ghost
+  avatar: ../../attachments/ghost.png
+  bio: The professional publishing platform
+  twitter: TryGhost
+  facebook: ghost
+  website: https://ghost.org/
+  location: San Francisco
+- name: Another Author
+  avatar: ../../attachments/ghost.png
+  bio: This is another test author with a profile background image
+  twitter: TryGhost
+  facebook: ghost
+  website: https://ghost.org/
+  location: San Francisco
+  profile_image: ../../attachments/writing.jpg

@@ -1,0 +1,47 @@
+site_name: My Notebook
+# below redundant if redirect of root to notebook folder done in netlify.toml
+site_url: https://noteib.netlify.app/notebook
+site_dir: ./site
+docs_dir: ../../content
+
+# nav:
+#  - Home: './notebook/index.md'
+#  - 'Issue Tracker': 'https://example.com/'
+extra:
+  # for linking logo/icon to subdir instead of default root domain
+  # redundant if redirect of root to notebook folder done in netlify.toml
+  homepage: https://noteib.netlify.app/notebook
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+
+# Extensions
+markdown_extensions:
+  - footnotes
+  - attr_list
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.magiclink
+  - pymdownx.tasklist
+  - pymdownx.emoji
+  - admonition
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - toc:
+      permalink: true
+
+# index.md in content (doc_dir) for mastersite, obsidian metadata to exclude
+plugins:
+  - search
+  - roamlinks
+  - exclude:
+      glob:
+        - blog/*
+        - index.md
+        - metadata/*

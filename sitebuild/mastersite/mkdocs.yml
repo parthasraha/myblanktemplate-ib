@@ -1,0 +1,32 @@
+site_name: My Obsidian Notes
+site_url: https://parthaspace.gitlab.io/infobase
+site_dir: ../../public
+docs_dir: ../../content
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+
+# Extensions
+markdown_extensions:
+  - footnotes
+  - attr_list
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.magiclink
+  - pymdownx.tasklist
+  - pymdownx.emoji
+  - admonition
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - roamlinks

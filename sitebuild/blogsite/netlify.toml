@@ -1,0 +1,17 @@
+# This overrides any settings done in UI for same fields
+
+# Build context is Global default for all contexts
+[build]
+  # Directory to change to before starting a build where package.json etc.
+  # Path is in reference to repo root.
+  base = "sitebuild/blogsite/"
+
+  # publishes build artefacts to the directory relative to base dir
+  publish = "public/"
+
+  # Default build command.
+  command = "npm run build"
+
+  # Check blogsite and also content/blog directory for changes 
+  # If not specified, default it will check only current dir blogsite changes
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF . ../../content/blog/"
