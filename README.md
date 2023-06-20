@@ -1,6 +1,6 @@
-# infobase
+# infobase template  
 
-My Notes and Writeups
+This is blank template for ib - to take as scratch with minimum data retained for sample
 
 ## Installation Steps
 
